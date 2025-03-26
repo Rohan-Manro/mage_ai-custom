@@ -56,11 +56,7 @@ RUN \
 # Mage
 COPY ./mage_ai/server/constants.py /tmp/constants.py
 RUN if [ -z "$FEATURE_BRANCH" ] || [ "$FEATURE_BRANCH" = "null" ] ; then \
-  tag=$(tail -n 1 /tmp/constants.py) && \
-  VERSION=$(echo "$tag" | tr -d "'") && \
-  pip3 install --no-cache-dir "mage-ai[all]==$VERSION"; \
-  else \
-  pip3 install --no-cache-dir "git+https://github.com/mage-ai/mage-ai.git@$FEATURE_BRANCH#egg=mage-ai[all]"; \
+  pip3 install --no-cache-dir "git+https://github.com/Rohan-Manro/mage_ai-custom.git@policy_tag_bug_fix#egg=mage-ai[all]"; \
   fi
 
 
